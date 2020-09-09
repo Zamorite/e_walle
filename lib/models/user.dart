@@ -1,8 +1,9 @@
 class User {
-  String name, avatar;
+  String name, avatar, address;
 
   User({
     this.name,
     this.avatar,
+    this.address,
   });
 }
