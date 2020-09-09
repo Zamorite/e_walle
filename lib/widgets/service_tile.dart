@@ -22,7 +22,7 @@ class ServiceTile extends StatelessWidget {
               horizontal: 19,
             ),
             decoration: BoxDecoration(
-              color: kLight,
+              color: Theme.of(context).cardColor,
               borderRadius: BorderRadius.circular(12),
             ),
             child: Image.asset(service.icon),

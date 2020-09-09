@@ -66,9 +66,11 @@ ThemeData darkTheme = defaultDarkTheme.copyWith(
     subtitle1: kBodyFontStyle.copyWith(
       color: kNavy,
       fontSize: 16,
+      fontWeight: FontWeight.w600,
     ),
     headline2: kBodyFontStyle.copyWith(
       fontSize: 24,
+      fontWeight: FontWeight.w500,
       color: kCharcoal,
     ),
   ),

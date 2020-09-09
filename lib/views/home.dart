@@ -45,7 +45,7 @@ class HomeView extends StatelessWidget {
                     bottom: 25,
                   ),
                   decoration: BoxDecoration(
-                    color: kLight,
+                    color: Theme.of(context).cardColor,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Row(

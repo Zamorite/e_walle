@@ -17,7 +17,7 @@ class BeneficiaryTile extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: kLight,
+        color: Theme.of(context).cardColor,
       ),
       child: Column(
         children: [

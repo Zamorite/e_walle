@@ -31,6 +31,7 @@ dependencies:
   hive_flutter: ^0.3.1
   animated_theme_switcher: ^1.0.7
   shared_preferences: ^0.5.10
+  vector_math: ^2.0.8
 
 dev_dependencies:
   flutter_test:
