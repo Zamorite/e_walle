@@ -25,6 +25,7 @@
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:eWalle/services/theme_service.dart';
 import 'package:eWalle/utils/themes.dart';
+import 'package:eWalle/views/home.dart';
 import 'package:eWalle/views/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -48,7 +49,8 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'eWalle',
           theme: ThemeProvider.of(context),
-          home: OnboardingView(),
+          home: HomeView(),
+          // home: OnboardingView(),
         );
       }),
     );
