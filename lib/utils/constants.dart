@@ -48,6 +48,13 @@ const kTLRPadding = EdgeInsets.only(
   right: 25,
   left: 25,
 );
+const kLRPadding = EdgeInsets.only(
+  right: 25,
+  left: 25,
+);
+const kLPadding = EdgeInsets.only(
+  left: 25,
+);
 const kOnboardingPadding = EdgeInsets.only(
   top: 30,
   right: 25,

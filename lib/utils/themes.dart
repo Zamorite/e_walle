@@ -30,6 +30,7 @@ ThemeData lightTheme = defaultLightTheme.copyWith(
     subtitle1: kBodyFontStyle.copyWith(
       color: kNavy,
       fontSize: 16,
+      fontWeight: FontWeight.w600,
     ),
     headline2: kBodyFontStyle.copyWith(
       fontSize: 24,
