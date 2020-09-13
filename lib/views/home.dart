@@ -8,6 +8,10 @@ import 'package:eWalle/widgets/service_tile.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
+  final Function openDrawer;
+
+  const HomeView({Key key, this.openDrawer}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,12 +22,15 @@ class HomeView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Padding(
-                padding: kTLRPadding,
+                padding: kTLRPadding.copyWith(bottom: 30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Image.asset(kLogoH),
-                    Image.asset(kMenu),
+                    InkWell(
+                      onTap: openDrawer,
+                      child: Image.asset(kMenu),
+                    ),
                   ],
                 ),
               ),
