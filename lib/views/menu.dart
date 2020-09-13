@@ -7,6 +7,10 @@ import 'package:eWalle/widgets/menu_tile.dart';
 import 'package:flutter/material.dart';
 
 class MenuView extends StatelessWidget {
+  final Function closeDrawer;
+
+  const MenuView({Key key, this.closeDrawer}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ThemeSwitchingArea(
@@ -66,9 +70,12 @@ class MenuView extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(right: 27),
-                        child: Image.asset(kClose),
+                      InkWell(
+                        onTap: closeDrawer,
+                        child: Padding(
+                          padding: EdgeInsets.all(27),
+                          child: Image.asset(kClose),
+                        ),
                       ),
                     ],
                   ),
