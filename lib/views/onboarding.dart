@@ -1,6 +1,7 @@
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:eWalle/services/theme_service.dart';
 import 'package:eWalle/utils/constants.dart';
+import 'package:eWalle/view_stage.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingView extends StatelessWidget {
@@ -73,7 +74,11 @@ class OnboardingView extends StatelessWidget {
                     Column(
                       children: [
                         InkWell(
-                          onTap: () => null,
+                          onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => ViewStage(),
+                            ),
+                          ),
                           child: Container(
                             decoration: BoxDecoration(
                               color: kYellow,
