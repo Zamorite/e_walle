@@ -5,6 +5,8 @@ import 'package:eWalle/services/theme_service.dart';
 import 'package:eWalle/utils/constants.dart';
 import 'package:eWalle/widgets/menu_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class MenuView extends StatelessWidget {
   final Function closeDrawer;
@@ -122,14 +124,22 @@ class MenuView extends StatelessWidget {
                             InkWell(
                               onTap: () async {
                                 var service = await ThemeService.instance;
-                                // ..save('dark');
-                                var theme = service.getByName('light');
+                                var theme = service.getNextTheme();
                                 ThemeSwitcher.of(context)
-                                    .changeTheme(theme: theme);
-                                service.save('light');
+                                    .changeTheme(theme: theme['theme']);
+                                service.save(theme['name']);
                               },
-                              child: Icon(
-                                Icons.wb_sunny,
+                              child: ValueListenableBuilder(
+                                valueListenable: Hive.box('settings')
+                                    .listenable(keys: ['theme']),
+                                builder: (context, box, widget) {
+                                  print('[Menu][Theme] >> ${box.get('theme')}');
+                                  return Icon(
+                                    box.get('theme') == 'light'
+                                        ? Icons.brightness_3
+                                        : Icons.wb_sunny,
+                                  );
+                                },
                               ),
                             ),
                           ],
