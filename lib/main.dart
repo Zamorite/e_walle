@@ -51,10 +51,10 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'eWalle',
           theme: ThemeProvider.of(context),
-          home: ViewStage(),
+          // home: ViewStage(),
           // home: HomeView(),
           // home: MenuView(),
-          // home: OnboardingView(),
+          home: OnboardingView(),
         );
       }),
     );
