@@ -33,8 +33,11 @@ class HomeView extends StatelessWidget {
                         : kLogoHDark),
                     InkWell(
                       onTap: openDrawer,
-                      child: ThemeImage(
-                        source: kMenu,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ThemeImage(
+                          source: kMenu,
+                        ),
                       ),
                     ),
                   ],
