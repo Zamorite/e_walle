@@ -122,8 +122,8 @@ class MenuView extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(
                       left: 30,
-                      bottom: 27,
-                      right: 27,
+                      bottom: 20,
+                      right: 25,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -137,6 +137,7 @@ class MenuView extends StatelessWidget {
                         ),
                         ThemeSwitcher(
                           builder: (BuildContext context) => InkWell(
+                            borderRadius: BorderRadius.circular(50),
                             onTap: () async {
                               var service = await ThemeService.instance;
                               var nextThemeName = service.previousThemeName;
@@ -144,15 +145,19 @@ class MenuView extends StatelessWidget {
                                   .changeTheme(theme: service.getNextTheme());
                               service.save(nextThemeName);
                             },
-                            child: Builder(
-                              builder: (BuildContext context) {
-                                return Icon(
-                                  Theme.of(context).brightness ==
+                            child: Padding(
+                              padding: const EdgeInsets.all(8),
+                              child: Builder(
+                                builder: (BuildContext context) {
+                                  return Theme.of(context).brightness ==
                                           Brightness.light
-                                      ? Icons.brightness_3
-                                      : Icons.wb_sunny,
-                                );
-                              },
+                                      ? Icon(Icons.brightness_3)
+                                      : Icon(
+                                          Icons.wb_sunny,
+                                          color: kYellow,
+                                        );
+                                },
+                              ),
                             ),
                           ),
                         ),
