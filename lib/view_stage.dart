@@ -93,17 +93,15 @@ class _ViewStageState extends State<ViewStage>
           onHorizontalDragEnd: _onDragEnd,
           child: AnimatedBuilder(
               animation: _ctrl,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                child: HomeView(
-                  openDrawer: _open,
-                ),
+              child: HomeView(
+                openDrawer: _open,
               ),
               builder: (BuildContext context, Widget child) {
                 double scale = 1 - _ctrl.value * .3;
                 double degree = _ctrl.value * -15;
                 double transX = _ctrl.value * 200;
                 double transY = _ctrl.value * 150;
+                double radius = _ctrl.value * 30;
 
                 return Transform(
                   transform: Matrix4Transform()
@@ -111,7 +109,10 @@ class _ViewStageState extends State<ViewStage>
                       .rotateDegrees(degree, origin: Offset(25, 25))
                       .translate(x: transX, y: transY)
                       .matrix4,
-                  child: child,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(radius),
+                    child: child,
+                  ),
                 );
               }),
         ),
