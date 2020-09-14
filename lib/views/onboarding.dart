@@ -70,7 +70,10 @@ class OnboardingView extends StatelessWidget {
                       children: [
                         Padding(
                           padding: EdgeInsets.only(bottom: 16.0),
-                          child: Image.asset(kLogoV),
+                          child: Image.asset(
+                              Theme.of(context).brightness == Brightness.light
+                                  ? kLogoV
+                                  : kLogoVDark),
                         ),
                         Text(
                           'Open An Account For Digital E-Wallet Solutions.Instant Payouts.\n\nJoin For Free.',

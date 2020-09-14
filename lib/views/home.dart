@@ -26,7 +26,9 @@ class HomeView extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset(kLogoH),
+                    Image.asset(Theme.of(context).brightness == Brightness.light
+                        ? kLogoH
+                        : kLogoHDark),
                     InkWell(
                       onTap: openDrawer,
                       child: Image.asset(kMenu),

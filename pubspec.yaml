@@ -58,8 +58,8 @@ flutter:
 
     # PNG Icons
     - assets/images/png/icons/
-    - assets/images/png/icons/2x
-    - assets/images/png/icons/3x
+    - assets/images/png/icons/2x/
+    - assets/images/png/icons/3x/
 
     # PNG Avatars
     - assets/images/png/avatars/

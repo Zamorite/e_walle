@@ -21,6 +21,10 @@ const kSideBanner = 'assets/images/png/misc/side_banner.png';
 const kLogoH = 'assets/images/png/misc/logo_h.png';
 const kLogoV = 'assets/images/png/misc/logo_v.png';
 
+// DarkMode Images
+const kLogoHDark = 'assets/images/png/misc/logo_h_dark.png';
+const kLogoVDark = 'assets/images/png/misc/logo_v_dark.png';
+
 // Icons
 const kClose = 'assets/images/png/icons/close.png';
 const kLightning = 'assets/images/png/icons/lightning.png';
