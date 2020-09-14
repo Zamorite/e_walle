@@ -31,6 +31,7 @@ import 'package:eWalle/views/menu.dart';
 import 'package:eWalle/views/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -52,6 +53,11 @@ class MyApp extends StatelessWidget {
     return ThemeProvider(
       initTheme: theme,
       child: Builder(builder: (context) {
+        SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+          DeviceOrientation.portraitDown,
+        ]);
+
         return MaterialApp(
           title: 'eWalle',
           theme: ThemeProvider.of(context),

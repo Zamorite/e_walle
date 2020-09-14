@@ -1,16 +1,9 @@
 # eWalle
 
-A new Flutter project.
+[![android](https://forthebadge.com/images/badges/built-for-android.svg)](https://www.android.com/) [![zamorite](https://forthebadge.com/images/badges/built-with-love.svg)](https://zamorite.com) [![download](https://forthebadge.com/images/badges/check-it-out.svg)](https://forthebadge.com)
 
-## Getting Started
+An implementation of the [eWalle design](https://dribbble.com/shots/9435324-eWalle-Portable-Wallet) made by [Neelesh Chaudhary](https://dribbble.com/nkchaudhary01) for [Nickelfox](https://dribbble.com/NickelfoxStudio).
 
-This project is a starting point for a Flutter application.
+# Demo
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://github.com/Zamorite/e_walle/raw/dev/demo/eWalle.gif" width="250px">
