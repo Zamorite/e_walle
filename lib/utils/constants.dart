@@ -14,6 +14,7 @@ const kCharcoal = Color(0xFF1B1D28);
 const kLight = Color(0xFFF1F3F6);
 const kDark = Color(0xFF212330);
 const kGray = Color(0xFF7B7F9E);
+const kDeepBlack = Color(0xFF1B1D28);
 
 // Images
 const kSideBanner = 'assets/images/png/misc/side_banner.png';

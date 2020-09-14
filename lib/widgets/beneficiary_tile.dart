@@ -39,7 +39,10 @@ class BeneficiaryTile extends StatelessWidget {
               ),
             ),
           ),
-          Text(user.name),
+          Text(
+            user.name,
+            style: Theme.of(context).textTheme.caption,
+          ),
         ],
       ),
     );

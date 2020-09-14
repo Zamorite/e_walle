@@ -24,9 +24,11 @@ class MenuTile extends StatelessWidget {
       ),
       child: Text(
         menuLink.name,
-        style: Theme.of(context).textTheme.subtitle1.copyWith(
-              fontWeight: FontWeight.w500,
-            ),
+        style: menuLink.active
+            ? Theme.of(context).textTheme.subtitle2.copyWith(
+                  fontWeight: FontWeight.bold,
+                )
+            : Theme.of(context).textTheme.subtitle2,
       ),
     );
   }

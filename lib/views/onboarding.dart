@@ -43,9 +43,10 @@ class OnboardingView extends StatelessWidget {
                                   '34°C',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2
+                                      .subtitle2
                                       .copyWith(
                                         fontWeight: FontWeight.w600,
+                                        fontSize: 13,
                                       ),
                                 ),
                               ],
@@ -54,7 +55,13 @@ class OnboardingView extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 8.0),
-                          child: Text('Nov.10.2020 | Wednesday'),
+                          child: Text(
+                            'Nov.10.2020 | Wednesday',
+                            style:
+                                Theme.of(context).textTheme.bodyText1.copyWith(
+                                      fontSize: 13,
+                                    ),
+                          ),
                         ),
                       ],
                     ),

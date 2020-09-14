@@ -7,6 +7,7 @@ import 'package:eWalle/widgets/menu_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:provider/provider.dart';
 
 class MenuView extends StatelessWidget {
   final Function closeDrawer;
@@ -17,151 +18,158 @@ class MenuView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ThemeSwitchingArea(
       child: Scaffold(
-        body: ThemeSwitcher(
-          builder: (context) => Scaffold(
-            backgroundColor: Theme.of(context).cardColor,
-            body: SafeArea(
-              child: Column(
+        backgroundColor: Theme.of(context).cardColor,
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(
-                          left: 30,
-                          top: 35,
-                          right: 36,
-                          bottom: 35,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).scaffoldBackgroundColor,
-                          borderRadius: BorderRadius.only(
-                            bottomRight: Radius.circular(53.5),
+                  Container(
+                    padding: EdgeInsets.only(
+                      left: 30,
+                      top: 35,
+                      right: 36,
+                      bottom: 35,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).scaffoldBackgroundColor,
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(53.5),
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(right: 10.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).cardColor,
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(50),
+                              child: Image.asset(Database.user.avatar),
+                            ),
                           ),
                         ),
-                        child: Row(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Padding(
-                              padding: EdgeInsets.only(right: 10.0),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).cardColor,
-                                  borderRadius: BorderRadius.circular(50),
-                                ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(50),
-                                  child: Image.asset(Database.user.avatar),
-                                ),
-                              ),
+                            Text(
+                              Database.user.name,
+                              style: Theme.of(context).textTheme.subtitle2,
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  Database.user.name,
-                                  style: Theme.of(context).textTheme.subtitle1,
-                                ),
-                                Text(
-                                  Database.user.address,
-                                  style: Theme.of(context).textTheme.caption,
-                                ),
-                              ],
+                            Text(
+                              Database.user.address,
+                              style: Theme.of(context).textTheme.caption,
                             ),
                           ],
                         ),
-                      ),
-                      InkWell(
-                        onTap: closeDrawer,
-                        child: Padding(
-                          padding: EdgeInsets.all(27),
-                          child: Image.asset(kClose),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      ...Database.menuLinks
-                          .map(
-                            (menuLink) => MenuTile(
-                              menuLink: menuLink,
-                            ),
-                          )
-                          .toList(),
-                    ],
+                  InkWell(
+                    onTap: closeDrawer,
+                    child: Padding(
+                      padding: EdgeInsets.all(27),
+                      child: Image.asset(kClose),
+                    ),
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: 30,
-                          bottom: 62,
-                        ),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(right: 8.0),
-                              child: Image.asset(kPower),
-                            ),
-                            Text('Logout'),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: 30,
-                          bottom: 27,
-                          right: 27,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('Version 2.0.1'),
-                            InkWell(
-                              onTap: () async {
-                                var service = await ThemeService.instance;
-                                var theme = service.getNextTheme();
-                                ThemeSwitcher.of(context)
-                                    .changeTheme(theme: theme['theme']);
-                                service.save(theme['name']);
-                              },
-                              child: ValueListenableBuilder(
-                                valueListenable: Hive.box('settings')
-                                    .listenable(keys: ['theme']),
-                                builder: (context, box, widget) {
-                                  print('[Menu][Theme] >> ${box.get('theme')}');
-                                  return Icon(
-                                    box.get('theme') == 'light'
-                                        ? Icons.brightness_3
-                                        : Icons.wb_sunny,
-                                  );
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  )
-                  // Center(
-                  //   child: RaisedButton(
-                  //     child: Text('Change Theme'),
-                  //     onPressed: () async {
-                  //       var service = await ThemeService.instance;
-                  //       // ..save('dark');
-                  //       var theme = service.getByName('dark');
-                  //       ThemeSwitcher.of(context).changeTheme(theme: theme);
-                  //       service.save('dark');
-                  //     },
-                  //   ),
-                  // ),
                 ],
               ),
-            ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  ...Database.menuLinks
+                      .map(
+                        (menuLink) => MenuTile(
+                          menuLink: menuLink,
+                        ),
+                      )
+                      .toList(),
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 30,
+                      bottom: 62,
+                    ),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(right: 8.0),
+                          child: Image.asset(kPower),
+                        ),
+                        Text(
+                          'Logout',
+                          style: Theme.of(context).textTheme.subtitle2.copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 30,
+                      bottom: 27,
+                      right: 27,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Version 2.0.1',
+                          style: Theme.of(context)
+                              .textTheme
+                              .caption
+                              .copyWith(fontSize: 10),
+                        ),
+                        ThemeSwitcher(
+                          builder: (BuildContext context) => InkWell(
+                            onTap: () async {
+                              var service = await ThemeService.instance;
+                              var nextThemeName = service.previousThemeName;
+                              ThemeSwitcher.of(context)
+                                  .changeTheme(theme: service.getNextTheme());
+                              service.save(nextThemeName);
+                            },
+                            child: Builder(
+                              builder: (BuildContext context) {
+                                return Icon(
+                                  Theme.of(context).brightness ==
+                                          Brightness.light
+                                      ? Icons.brightness_3
+                                      : Icons.wb_sunny,
+                                );
+                              },
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              )
+              // Center(
+              //   child: RaisedButton(
+              //     child: Text('Change Theme'),
+              //     onPressed: () async {
+              //       var service = await ThemeService.instance;
+              //       // ..save('dark');
+              //       var theme = service.getByName('dark');
+              //       ThemeSwitcher.of(context).changeTheme(theme: theme);
+              //       service.save('dark');
+              //     },
+              //   ),
+              // ),
+            ],
           ),
         ),
       ),
