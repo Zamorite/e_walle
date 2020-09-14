@@ -1,3 +1,4 @@
+import 'package:eWalle/widgets/theme_image.dart';
 import 'package:flutter/material.dart';
 
 class IconedSubtitle extends StatelessWidget {
@@ -18,7 +19,7 @@ class IconedSubtitle extends StatelessWidget {
           title,
           style: Theme.of(context).textTheme.subtitle1,
         ),
-        Image.asset(icon),
+        ThemeImage(source: icon),
       ],
     );
   }

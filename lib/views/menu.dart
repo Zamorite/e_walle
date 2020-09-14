@@ -4,6 +4,7 @@ import 'package:eWalle/services/database.dart';
 import 'package:eWalle/services/theme_service.dart';
 import 'package:eWalle/utils/constants.dart';
 import 'package:eWalle/widgets/menu_tile.dart';
+import 'package:eWalle/widgets/theme_image.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -104,7 +105,10 @@ class MenuView extends StatelessWidget {
                       children: [
                         Padding(
                           padding: EdgeInsets.only(right: 8.0),
-                          child: Image.asset(kPower),
+                          child: ThemeImage(
+                            source: kPower,
+                            hue: kWhite,
+                          ),
                         ),
                         Text(
                           'Logout',

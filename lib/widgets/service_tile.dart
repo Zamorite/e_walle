@@ -1,5 +1,6 @@
 import 'package:eWalle/models/service.dart';
 import 'package:eWalle/utils/constants.dart';
+import 'package:eWalle/widgets/theme_image.dart';
 import 'package:flutter/material.dart';
 
 class ServiceTile extends StatelessWidget {
@@ -25,7 +26,7 @@ class ServiceTile extends StatelessWidget {
               color: Theme.of(context).cardColor,
               borderRadius: BorderRadius.circular(12),
             ),
-            child: Image.asset(service.icon),
+            child: ThemeImage(source: service.icon),
           ),
         ),
         Text(

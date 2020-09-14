@@ -5,6 +5,7 @@ import 'package:eWalle/widgets/beneficiary_tile.dart';
 import 'package:eWalle/widgets/fab.dart';
 import 'package:eWalle/widgets/iconed_subtitle.dart';
 import 'package:eWalle/widgets/service_tile.dart';
+import 'package:eWalle/widgets/theme_image.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -31,7 +32,9 @@ class HomeView extends StatelessWidget {
                         : kLogoHDark),
                     InkWell(
                       onTap: openDrawer,
-                      child: Image.asset(kMenu),
+                      child: ThemeImage(
+                        source: kMenu,
+                      ),
                     ),
                   ],
                 ),
