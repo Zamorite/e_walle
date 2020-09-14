@@ -34,6 +34,7 @@ dependencies:
   vector_math: ^2.0.8
   matrix4_transform: ^1.1.4
   provider: ^4.3.2+2
+  sticky_headers: ^0.1.8+1
 
 dev_dependencies:
   flutter_test:
@@ -95,3 +96,4 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
