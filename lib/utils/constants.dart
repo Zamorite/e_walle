@@ -14,11 +14,16 @@ const kCharcoal = Color(0xFF1B1D28);
 const kLight = Color(0xFFF1F3F6);
 const kDark = Color(0xFF212330);
 const kGray = Color(0xFF7B7F9E);
+const kDeepBlack = Color(0xFF1B1D28);
 
 // Images
 const kSideBanner = 'assets/images/png/misc/side_banner.png';
 const kLogoH = 'assets/images/png/misc/logo_h.png';
 const kLogoV = 'assets/images/png/misc/logo_v.png';
+
+// DarkMode Images
+const kLogoHDark = 'assets/images/png/misc/logo_h_dark.png';
+const kLogoVDark = 'assets/images/png/misc/logo_v_dark.png';
 
 // Icons
 const kClose = 'assets/images/png/icons/close.png';

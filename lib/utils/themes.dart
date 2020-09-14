@@ -32,6 +32,11 @@ ThemeData lightTheme = defaultLightTheme.copyWith(
       fontSize: 16,
       fontWeight: FontWeight.w600,
     ),
+    subtitle2: kBodyFontStyle.copyWith(
+      color: kDeepBlack,
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+    ),
     headline2: kBodyFontStyle.copyWith(
       fontSize: 24,
       fontWeight: FontWeight.w500,
@@ -51,7 +56,7 @@ ThemeData darkTheme = defaultDarkTheme.copyWith(
   textTheme: TextTheme(
     // headline1: TextStyle(),
     caption: kBodyFontStyle.copyWith(
-      color: kNavy,
+      color: kGray,
       fontSize: 12,
     ),
     bodyText1: kBodyFontStyle,
@@ -64,14 +69,19 @@ ThemeData darkTheme = defaultDarkTheme.copyWith(
       fontSize: 16,
     ),
     subtitle1: kBodyFontStyle.copyWith(
-      color: kNavy,
+      color: kGray,
       fontSize: 16,
       fontWeight: FontWeight.w600,
+    ),
+    subtitle2: kBodyFontStyle.copyWith(
+      color: kWhite,
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
     ),
     headline2: kBodyFontStyle.copyWith(
       fontSize: 24,
       fontWeight: FontWeight.w500,
-      color: kCharcoal,
+      color: kWhite,
     ),
   ),
 );
