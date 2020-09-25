@@ -6,4 +6,4 @@ An implementation of the [eWalle design](https://dribbble.com/shots/9435324-eWal
 
 # Demo
 
-<img src="https://github.com/Zamorite/e_walle/raw/dev/demo/eWalle.gif" width="250px">
+<img src="https://github.com/Zamorite/e_walle/raw/dev/demo/eWalle.gif">
